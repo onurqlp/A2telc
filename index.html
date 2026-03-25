@@ -1,89 +1,147 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AYDA · TELC A2 Sınav Bilgilendirme</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYDA · TELC A2 Sınav</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
-      margin: 0;
-    }
+<style>
 
-    header {
-      background: #234078;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      font-size: 22px;
-      font-weight: bold;
-    }
+:root {
+  --primary: #234078;
+  --bg: #f4f6fb;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 15px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  background: var(--bg);
+}
 
-    .card h2 {
-      margin-top: 0;
-      color: #234078;
-      font-size: 18px;
-    }
+/* HEADER */
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 16px;
-      background: #234078;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+/* CONTAINER */
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 12px;
+}
 
-    .btn:hover {
-      background: #1a2f5c;
-    }
+/* CARD */
+.card {
+  background: white;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
 
-    .note {
-      background: #fff3cd;
-      padding: 12px;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 14px;
-    }
+/* TITLE */
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--primary);
+}
 
-    ul {
-      padding-left: 18px;
-    }
+/* BUTTON */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding: 14px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
 
-    .contact {
-      background: #234078;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
+/* NOTE */
+.note {
+  background: #fff3cd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+}
 
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: gray;
-      margin: 25px 0;
-    }
-  </style>
+/* LIST */
+ul {
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--primary);
+  color: white;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+  position: fixed;
+  bottom: 15px;
+  left: 12px;
+  right: 12px;
+  background: #25D366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* DESKTOP IMPROVE */
+@media (min-width: 768px) {
+
+  header {
+    font-size: 22px;
+    padding: 22px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .btn {
+    width: auto;
+    display: inline-block;
+  }
+
+  .whatsapp {
+    left: auto;
+    right: 20px;
+    width: 260px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -94,84 +152,80 @@ AYDA · TELC A2 Sınav Bilgilendirme
 
 <div class="container">
 
-  <div class="card">
-    <h2>🎥 MÜSDAV A2 TELC SINAV TANITIM BİLGİLENDİRMESİ (MUTLAKA İZLEYİN)</h2>
-    <a href="https://youtu.be/Zg9YcKwsP00?si=UyU7D04afjQGgmnY" target="_blank" class="btn">Videoyu İzle</a>
-  </div>
+<div class="card">
+<h2>🎥 MÜSDAV A2 TELC SINAV TANITIMI (MUTLAKA İZLEYİN)</h2>
+<a href="https://youtu.be/Zg9YcKwsP00?si=UyU7D04afjQGgmnY" class="btn" target="_blank">Videoyu İzle</a>
+</div>
 
-  <div class="card">
-    <h2>📍 Sınav Merkezi</h2>
-    <p>Kızılay Mah. Meşrutiyet Cad. No:1<br>Koray İş Hanı 3. Kat</p>
-    <a href="https://maps.app.goo.gl/RnhcEvx6pYYdM5Vr9" target="_blank" class="btn">Konumu Aç</a>
-  </div>
+<div class="card">
+<h2>📍 Sınav Merkezi</h2>
+<p>Kızılay Mah. Meşrutiyet Cad. No:1<br>Koray İş Hanı 3. Kat</p>
+<a href="https://maps.app.goo.gl/RnhcEvx6pYYdM5Vr9" class="btn" target="_blank">Konumu Aç</a>
+</div>
 
-  <div class="card">
-    <h2>🖥️ Dijital Sınav</h2>
-    <a href="https://youtu.be/FuLWdLeU_88?si=lNctG65kjhXGZ8s7" target="_blank" class="btn">Nasıl Yapılıyor?</a>
-  </div>
+<div class="card">
+<h2>🖥️ Dijital Sınav</h2>
+<a href="https://youtu.be/FuLWdLeU_88?si=lNctG65kjhXGZ8s7" class="btn" target="_blank">Nasıl Yapılıyor?</a>
+</div>
 
-  <div class="card">
-    <h2>🎤 Sözlü Sınav</h2>
-    <a href="https://youtu.be/3hPns0XBOCs?si=Q7nUXsYtG0mFE2Un" target="_blank" class="btn">Örnek İzle</a>
-    <div class="note">
-      Duyurular (saat & partner) dijital sınav sonrası yapılır.<br><br>
-      Bizde komisyonda 1 hoca olacaktır (Onur veya Esra hoca). İşleyiş benzer ancak 3. bölüm farklıdır. 
-      3. bölüm için örnek sınava göz atınız.
-    </div>
-  </div>
+<div class="card">
+<h2>🎤 Sözlü Sınav</h2>
+<a href="https://youtu.be/3hPns0XBOCs?si=Q7nUXsYtG0mFE2Un" class="btn" target="_blank">Örnek İzle</a>
 
-  <div class="card">
-    <h2>📄 Örnek Sınav</h2>
-    <a href="https://www.telc.net/fileadmin/user_upload/mock_exams/Deutsch/telc_deutsch_a2_01.zip" target="_blank" class="btn">İndir</a>
-  </div>
+<div class="note">
+Duyurular dijital sınav sonrası yapılır.<br><br>
+Bizde komisyonda 1 hoca olacaktır (Onur veya Esra hoca). İşleyiş benzer ancak 3. bölüm farklıdır. 
+3. bölüm için örnek sınava bakınız.
+</div>
+</div>
 
-  <div class="card">
-    <h2>📚 Hazırlık Dosyaları</h2>
-    <a href="https://drive.google.com/drive/folders/1GRjqxt_FvMmiRtguHsDjNlxPZQL1X82P" target="_blank" class="btn">Aç</a>
-  </div>
+<div class="card">
+<h2>📄 Örnek Sınav</h2>
+<a href="https://www.telc.net/fileadmin/user_upload/mock_exams/Deutsch/telc_deutsch_a2_01.zip" class="btn" target="_blank">İndir</a>
+</div>
 
-  <div class="card">
-    <h2>⚠️ Sınav Kuralları</h2>
-    <ul>
-      <li>Telefon ve tüm elektronik cihazlar yasaktır.</li>
-      <li>Sadece kimlik ve su ile giriş yapılır.</li>
-      <li>Girişte fotoğraf çekilir.</li>
-      <li>Mont/ceket çıkarılır.</li>
-      <li>Telefonlar sözlü sınav sonuna kadar teslim alınır.</li>
-    </ul>
-  </div>
+<div class="card">
+<h2>📚 Hazırlık Dosyaları</h2>
+<a href="https://drive.google.com/drive/folders/1GRjqxt_FvMmiRtguHsDjNlxPZQL1X82P" class="btn" target="_blank">Aç</a>
+</div>
 
-  <div class="card">
-    <h2>📊 Sonuç Süreci</h2>
-    <ul>
-      <li>Sınav telc (Almanya) tarafından değerlendirilir.</li>
-      <li>Sürece müdahale edilemez.</li>
-      <li>Sonuçlar ortalama 15 iş günü.</li>
-      <li>Mail ile bilgilendirme yapılır.</li>
-    </ul>
-  </div>
+<div class="card">
+<h2>⚠️ Kurallar</h2>
+<ul>
+<li>Elektronik cihaz yasak</li>
+<li>Sadece kimlik + su</li>
+<li>Mont çıkarılır</li>
+<li>Telefonlar sınav sonuna kadar alınır</li>
+</ul>
+</div>
 
-  <div class="card">
-    <h2>💶 Sınav Ücreti</h2>
-    <p><strong>170€</strong></p>
-    <div class="note">
-      Sınav günü Euro olarak elden teslim edilir.
-    </div>
-  </div>
+<div class="card">
+<h2>📊 Sonuç</h2>
+<ul>
+<li>Telc (Almanya) değerlendirir</li>
+<li>Müdahale edilemez</li>
+<li>~15 iş günü</li>
+<li>Mail ile gelir</li>
+</ul>
+</div>
 
-  <div class="contact">
-    <h2>📞 İletişim</h2>
-    <p>Daha fazla bilgi için:</p>
-    <p><strong>0540 912 25 03</strong><br>
-    <strong>0537 243 51 23</strong></p>
-    <p>Onur Hoca'ya WhatsApp üzerinden yazabilirsiniz.</p>
-  </div>
+<div class="card">
+<h2>💶 Ücret</h2>
+<p><strong>170€</strong></p>
+<div class="note">Sınav günü euro € olarak elden teslim edilmedilir. </div>
+</div>
+
+<div class="contact">
+<h2>📞 İletişim</h2>
+<p>0540 912 25 03<br>0537 243 51 23</p>
+<p>Onur Hoca'ya yazabilirsiniz</p>
+</div>
 
 </div>
 
-<footer>
-AYDA Dil Akademisi · Sınav Bilgilendirme
-</footer>
+<a class="whatsapp" href="https://wa.me/905409122503" target="_blank">
+WhatsApp'tan Yaz
+</a>
 
 </body>
 </html>
