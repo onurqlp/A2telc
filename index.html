@@ -12,9 +12,7 @@
   --bg: #f4f6fb;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -88,6 +86,21 @@ ul {
   line-height: 1.5;
 }
 
+/* DATE CHIPS */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chips span {
+  background: var(--primary);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
 /* CONTACT */
 .contact {
   background: var(--primary);
@@ -113,32 +126,13 @@ ul {
   font-size: 15px;
 }
 
-/* DESKTOP IMPROVE */
+/* DESKTOP */
 @media (min-width: 768px) {
-
-  header {
-    font-size: 22px;
-    padding: 22px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .card h2 {
-    font-size: 18px;
-  }
-
-  .btn {
-    width: auto;
-    display: inline-block;
-  }
-
-  .whatsapp {
-    left: auto;
-    right: 20px;
-    width: 260px;
-  }
+  header { font-size: 22px; padding: 22px; }
+  .card { padding: 20px; }
+  .card h2 { font-size: 18px; }
+  .btn { width: auto; display: inline-block; }
+  .whatsapp { left: auto; right: 20px; width: 260px; }
 }
 
 </style>
@@ -152,22 +146,43 @@ AYDA · TELC A2 Sınav Bilgilendirme
 
 <div class="container">
 
+<!-- TARİHLER -->
+<div class="card">
+<h2>📅 A2 Sınav Tarihleri</h2>
+<div class="chips">
+<span>10 Nisan</span>
+<span>14 Nisan</span>
+<span>21 Nisan</span>
+<span>05 Mayıs</span>
+<span>12 Mayıs</span>
+<span>20 Mayıs</span>
+<span>09 Haziran</span>
+<span>16 Haziran</span>
+<span>23 Haziran</span>
+<span>30 Haziran</span>
+</div>
+</div>
+
+<!-- VIDEO -->
 <div class="card">
 <h2>🎥 MÜSDAV A2 TELC SINAV TANITIMI (MUTLAKA İZLEYİN)</h2>
 <a href="https://youtu.be/Zg9YcKwsP00?si=UyU7D04afjQGgmnY" class="btn" target="_blank">Videoyu İzle</a>
 </div>
 
+<!-- KONUM -->
 <div class="card">
 <h2>📍 Sınav Merkezi</h2>
 <p>Kızılay Mah. Meşrutiyet Cad. No:1<br>Koray İş Hanı 3. Kat</p>
 <a href="https://maps.app.goo.gl/RnhcEvx6pYYdM5Vr9" class="btn" target="_blank">Konumu Aç</a>
 </div>
 
+<!-- DIJITAL -->
 <div class="card">
 <h2>🖥️ Dijital Sınav</h2>
 <a href="https://youtu.be/FuLWdLeU_88?si=lNctG65kjhXGZ8s7" class="btn" target="_blank">Nasıl Yapılıyor?</a>
 </div>
 
+<!-- SOZLU -->
 <div class="card">
 <h2>🎤 Sözlü Sınav</h2>
 <a href="https://youtu.be/3hPns0XBOCs?si=Q7nUXsYtG0mFE2Un" class="btn" target="_blank">Örnek İzle</a>
@@ -179,46 +194,53 @@ Bizde komisyonda 1 hoca olacaktır (Onur veya Esra hoca). İşleyiş benzer anca
 </div>
 </div>
 
+<!-- SINAV -->
 <div class="card">
 <h2>📄 Örnek Sınav</h2>
 <a href="https://www.telc.net/fileadmin/user_upload/mock_exams/Deutsch/telc_deutsch_a2_01.zip" class="btn" target="_blank">İndir</a>
 </div>
 
+<!-- DOSYA -->
 <div class="card">
 <h2>📚 Hazırlık Dosyaları</h2>
 <a href="https://drive.google.com/drive/folders/1GRjqxt_FvMmiRtguHsDjNlxPZQL1X82P" class="btn" target="_blank">Aç</a>
 </div>
 
+<!-- KURALLAR -->
 <div class="card">
 <h2>⚠️ Kurallar</h2>
 <ul>
 <li>Elektronik cihaz yasak</li>
 <li>Sadece kimlik + su</li>
+<li>Fotoğraf çekilir</li>
 <li>Mont çıkarılır</li>
 <li>Telefonlar sınav sonuna kadar alınır</li>
 </ul>
 </div>
 
+<!-- SONUC -->
 <div class="card">
-<h2>📊 Sonuç</h2>
+<h2>📊 Sonuç Süreci</h2>
 <ul>
 <li>Telc (Almanya) değerlendirir</li>
-<li>Müdahale edilemez</li>
-<li>~15 iş günü</li>
-<li>Mail ile gelir</li>
+<li>Sınav merkezleri sonuçlara müdahale edemez</li>
+<li>Sonuçlar ~15 iş günü içinde açıklanır</li>
+<li>Sertifikalar Mail ile gelir</li>
 </ul>
 </div>
 
+<!-- UCRET -->
 <div class="card">
 <h2>💶 Ücret</h2>
 <p><strong>170€</strong></p>
-<div class="note">Sınav günü euro € olarak elden teslim edilmedilir. </div>
+<div class="note">Sınav günü elden euro olarak verilmelidir</div>
 </div>
 
+<!-- CONTACT -->
 <div class="contact">
 <h2>📞 İletişim</h2>
 <p>0540 912 25 03<br>0537 243 51 23</p>
-<p>Onur Hoca'ya yazabilirsiniz</p>
+<p>Onur Hoca'ya WhatsApp'tan yazabilirsiniz</p>
 </div>
 
 </div>
