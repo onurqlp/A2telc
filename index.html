@@ -6,248 +6,536 @@
 <title>AYDA · TELC A2 Sınav</title>
 
 <style>
-
-:root {
-  --primary: #234078;
-  --bg: #f4f6fb;
+:root{
+  --primary:#234078;
+  --primary-dark:#1b315d;
+  --primary-soft:#edf3ff;
+  --bg:#f3f6fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --shadow:0 10px 28px rgba(15,23,42,.08);
+  --shadow-soft:0 4px 12px rgba(15,23,42,.05);
+  --radius:18px;
 }
 
-* { box-sizing: border-box; }
+*{ box-sizing:border-box; }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-  background: var(--bg);
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, #edf4ff 0%, transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, var(--bg) 55%, #eef2f7 100%);
 }
 
-header {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 18px 12px;
-  font-size: 18px;
-  font-weight: 600;
-  position: sticky;
-  top: 0;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-.container {
-  max-width: 750px;
-  margin: auto;
-  padding: 12px;
+.topbar{
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(226,232,240,.9);
+  position:sticky;
+  top:0;
+  z-index:20;
 }
 
-.card {
-  background: white;
-  padding: 16px;
-  margin-bottom: 12px;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+.topbar-inner{
+  max-width:860px;
+  margin:0 auto;
+  padding:14px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
 }
 
-.card h2 {
-  margin: 0 0 10px;
-  font-size: 16px;
-  color: var(--primary);
+.brand{
+  font-size:17px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-.01em;
 }
 
-.btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  padding: 14px;
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 500;
+.top-chip{
+  font-size:12px;
+  font-weight:700;
+  color:var(--primary);
+  background:var(--primary-soft);
+  border:1px solid #d7e5ff;
+  border-radius:999px;
+  padding:7px 10px;
+  white-space:nowrap;
 }
 
-.note {
-  background: #fff3cd;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 10px;
-  font-size: 13px;
+.container{
+  max-width:860px;
+  margin:0 auto;
+  padding:16px 12px 110px;
 }
 
-ul {
-  padding-left: 18px;
-  font-size: 14px;
-  line-height: 1.5;
+.hero{
+  background:linear-gradient(135deg, #1f3767 0%, #234078 58%, #2d4d89 100%);
+  color:#fff;
+  border-radius:26px;
+  padding:22px 18px;
+  margin-bottom:14px;
+  box-shadow:0 18px 42px rgba(35,64,120,.22);
+  position:relative;
+  overflow:hidden;
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-50px;
+  top:-40px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
 }
 
-.chips span {
-  background: var(--primary);
-  color: white;
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+.hero h1{
+  margin:0 0 8px;
+  font-size:24px;
+  line-height:1.15;
+  position:relative;
+  z-index:1;
 }
 
-.contact {
-  background: var(--primary);
-  color: white;
-  padding: 18px;
-  border-radius: 14px;
-  text-align: center;
+.hero p{
+  margin:0;
+  font-size:14px;
+  line-height:1.6;
+  color:rgba(255,255,255,.88);
+  position:relative;
+  z-index:1;
 }
 
-.whatsapp {
-  position: fixed;
-  bottom: 15px;
-  left: 12px;
-  right: 12px;
-  background: #25D366;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  border-radius: 12px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 15px;
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+  position:relative;
+  z-index:1;
 }
 
-@media (min-width: 768px) {
-  header { font-size: 22px; padding: 22px; }
-  .card { padding: 20px; }
-  .card h2 { font-size: 18px; }
-  .btn { width: auto; display: inline-block; }
-  .whatsapp { left: auto; right: 20px; width: 260px; }
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 14px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:800;
+  transition:.2s ease;
 }
 
+.hero-btn.primary{
+  background:#fff;
+  color:var(--primary);
+}
+
+.hero-btn.secondary{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.18);
+}
+
+.hero-btn:hover{
+  transform:translateY(-1px);
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+  margin-bottom:12px;
+}
+
+.card h2{
+  margin:0 0 12px;
+  font-size:17px;
+  color:var(--primary);
+  letter-spacing:-.01em;
+}
+
+.card p{
+  margin:0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.chips span{
+  background:var(--primary-soft);
+  color:var(--primary);
+  border:1px solid #d6e3fb;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.link-list{
+  display:grid;
+  gap:10px;
+}
+
+.link-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:13px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);
+  box-shadow:var(--shadow-soft);
+  flex-wrap:wrap;
+}
+
+.link-main{
+  flex:1;
+  min-width:220px;
+}
+
+.link-title{
+  font-size:14px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:4px;
+}
+
+.link-sub{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 15px;
+  background:var(--primary);
+  color:#fff;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:700;
+  box-shadow:0 8px 18px rgba(35,64,120,.16);
+  transition:.2s ease;
+  white-space:nowrap;
+}
+
+.btn:hover{
+  background:var(--primary-dark);
+  transform:translateY(-1px);
+}
+
+.btn.secondary{
+  background:#eef4ff;
+  color:var(--primary);
+  border:1px solid #d6e3fb;
+  box-shadow:none;
+}
+
+.note{
+  background:#fff7dc;
+  border:1px solid #f2df9e;
+  color:#6b5a16;
+  padding:12px;
+  border-radius:12px;
+  margin-top:12px;
+  font-size:13px;
+  line-height:1.55;
+}
+
+ul{
+  margin:0;
+  padding-left:18px;
+  font-size:14px;
+  line-height:1.6;
+  color:#334155;
+}
+
+ul li{
+  margin-bottom:6px;
+}
+
+.contact{
+  background:linear-gradient(135deg, #234078 0%, #2b4c89 100%);
+  color:white;
+  padding:20px 16px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 18px 36px rgba(35,64,120,.20);
+}
+
+.contact h2{
+  color:#fff;
+  margin:0 0 10px;
+}
+
+.contact p{
+  margin:6px 0;
+  color:rgba(255,255,255,.92);
+}
+
+.whatsapp{
+  position:fixed;
+  bottom:14px;
+  left:12px;
+  right:12px;
+  background:#25D366;
+  color:#fff;
+  text-align:center;
+  padding:15px 16px;
+  border-radius:14px;
+  font-weight:800;
+  box-shadow:0 12px 30px rgba(37,211,102,.28);
+  z-index:30;
+}
+
+@media (min-width:768px){
+  .topbar-inner{ padding:16px 18px; }
+  .brand{ font-size:19px; }
+  .container{ padding:22px 16px 90px; }
+  .hero{ padding:28px 24px; }
+  .hero h1{ font-size:31px; }
+  .card{ padding:20px; }
+  .card h2{ font-size:18px; }
+  .whatsapp{
+    left:auto;
+    right:20px;
+    width:280px;
+  }
+}
+
+@media (max-width:640px){
+  .hero-btn,
+  .btn{
+    width:100%;
+  }
+
+  .link-item{
+    align-items:flex-start;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-AYDA · TELC A2 Sınav Bilgilendirme
-</header>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">AYDA · TELC A2 Sınav Bilgilendirme</div>
+    <div class="top-chip">A2 • Ankara</div>
+  </div>
+</div>
 
 <div class="container">
 
-<!-- TARİHLER -->
-<div class="card">
-<h2>📅 A2 Sınav Tarihleri</h2>
-<div class="chips">
-<span>10 Nisan</span>
-<span>14 Nisan</span>
-<span>21 Nisan</span>
-<span>05 Mayıs</span>
-<span>12 Mayıs</span>
-<span>20 Mayıs</span>
-<span>09 Haziran</span>
-<span>16 Haziran</span>
-<span>23 Haziran</span>
-<span>30 Haziran</span>
-</div>
-</div>
+  <section class="hero">
+    <h1>TELC A2 Sınav Bilgilendirme</h1>
+    <p>
+      Sınav tarihi, videolar, örnek sınav, başvuru formu, konum ve önemli kurallara
+      bu sayfadan hızlıca ulaşabilirsiniz.
+    </p>
 
-<!-- VIDEO (GÜNCELLENDİ) -->
-<div class="card">
-<h2>🎥 Sınav Bilgilendirme Videoları</h2>
+    <div class="hero-actions">
+      <a href="form.pdf" class="hero-btn primary" download>Başvuru Formu İndir</a>
+      <a href="https://wa.me/905409122503" class="hero-btn secondary" target="_blank">WhatsApp'tan Yaz</a>
+    </div>
+  </section>
 
-<a href="https://youtu.be/cMazUdDPDnE" class="btn" target="_blank">
-🎤 Sözlü Sınav Bilgilendirme
-</a>
+  <div class="card">
+    <h2>📅 A2 Sınav Tarihleri</h2>
+    <div class="chips">
+      <span>10 Nisan</span>
+      <span>14 Nisan</span>
+      <span>21 Nisan</span>
+      <span>05 Mayıs</span>
+      <span>12 Mayıs</span>
+      <span>20 Mayıs</span>
+      <span>09 Haziran</span>
+      <span>16 Haziran</span>
+      <span>23 Haziran</span>
+      <span>30 Haziran</span>
+    </div>
+  </div>
 
-<a href="https://youtu.be/3Ve94Lc4Adw" class="btn" target="_blank">
-📘 Genel Bilgilendirme + Dijital Sınav Ortamı
-</a>
+  <div class="card">
+    <h2>📝 Başvuru Formu</h2>
+    <div class="link-list">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">form.pdf</div>
+          <div class="link-sub">Başvuru formunu indirip doldurabilirsiniz.</div>
+        </div>
+        <a href="form.pdf" class="btn" download>İndir</a>
+      </div>
+    </div>
+  </div>
 
-<a href="https://youtu.be/dA2TFJSRZC0" class="btn" target="_blank">
-🖥️ Dijitalde Sorular Nasıl Görünür / Nasıl İşaretlenir
-</a>
+  <div class="card">
+    <h2>🎥 Sınav Bilgilendirme Videoları</h2>
 
-</div>
+    <div class="link-list">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Sözlü Sınav Bilgilendirme</div>
+          <div class="link-sub">Sözlü sınav yapısı ve genel bilgilendirme.</div>
+        </div>
+        <a href="https://youtu.be/cMazUdDPDnE" class="btn" target="_blank">Aç</a>
+      </div>
 
-<!-- KONUM -->
-<div class="card">
-<h2>📍 Sınav Merkezi</h2>
-<p>Kızılay Mah. Meşrutiyet Cad. No:1<br>Koray İş Hanı 3. Kat</p>
-<a href="https://maps.app.goo.gl/RnhcEvx6pYYdM5Vr9" class="btn" target="_blank">Konumu Aç</a>
-</div>
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Genel Bilgilendirme + Dijital Sınav Ortamı</div>
+          <div class="link-sub">Sınavın genel işleyişi ve dijital ortam anlatımı.</div>
+        </div>
+        <a href="https://youtu.be/3Ve94Lc4Adw" class="btn" target="_blank">Aç</a>
+      </div>
 
-<!-- DIJITAL -->
-<div class="card">
-<h2>🖥️ Dijital Sınav</h2>
-<a href="https://youtu.be/FuLWdLeU_88?si=lNctG65kjhXGZ8s7" class="btn" target="_blank">Nasıl Yapılıyor?</a>
-</div>
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Dijitalde Sorular Nasıl Görünür / Nasıl İşaretlenir</div>
+          <div class="link-sub">Ekran düzeni ve soru işaretleme örneği.</div>
+        </div>
+        <a href="https://youtu.be/dA2TFJSRZC0" class="btn" target="_blank">Aç</a>
+      </div>
+    </div>
+  </div>
 
-<!-- SOZLU -->
-<div class="card">
-<h2>🎤 Sözlü Sınav</h2>
-<a href="https://youtu.be/3hPns0XBOCs?si=Q7nUXsYtG0mFE2Un" class="btn" target="_blank">Örnek İzle</a>
+  <div class="card">
+    <h2>📍 Sınav Merkezi</h2>
+    <p>Kızılay Mah. Meşrutiyet Cad. No:1<br>Koray İş Hanı 3. Kat</p>
 
-<div class="note">
-Duyurular dijital sınav sonrası yapılır.<br><br>
-Bizde komisyonda 1 hoca olacaktır (Onur veya Esra hoca). İşleyiş benzer ancak 3. bölüm farklıdır. 
-3. bölüm için örnek sınava bakınız.
-</div>
-</div>
+    <div class="link-list" style="margin-top:12px;">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Konum</div>
+          <div class="link-sub">Google Maps üzerinden yol tarifi alabilirsiniz.</div>
+        </div>
+        <a href="https://maps.app.goo.gl/RnhcEvx6pYYdM5Vr9" class="btn" target="_blank">Konumu Aç</a>
+      </div>
+    </div>
+  </div>
 
-<!-- SINAV -->
-<div class="card">
-<h2>📄 Örnek Sınav</h2>
-<a href="https://www.telc.net/fileadmin/user_upload/mock_exams/Deutsch/telc_deutsch_a2_01.zip" class="btn" target="_blank">İndir</a>
-</div>
+  <div class="card">
+    <h2>🖥️ Dijital Sınav</h2>
+    <div class="link-list">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Nasıl Yapılıyor?</div>
+          <div class="link-sub">Dijital sınav ortamını önceden görebilirsiniz.</div>
+        </div>
+        <a href="https://youtu.be/FuLWdLeU_88?si=lNctG65kjhXGZ8s7" class="btn" target="_blank">İzle</a>
+      </div>
+    </div>
+  </div>
 
-<!-- DOSYA -->
-<div class="card">
-<h2>📚 Hazırlık Dosyaları</h2>
-<a href="https://drive.google.com/drive/folders/1GRjqxt_FvMmiRtguHsDjNlxPZQL1X82P" class="btn" target="_blank">Aç</a>
-</div>
+  <div class="card">
+    <h2>🎤 Sözlü Sınav</h2>
+    <div class="link-list">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Örnek Sözlü Sınav</div>
+          <div class="link-sub">Sözlü bölüm için örnek video.</div>
+        </div>
+        <a href="https://youtu.be/3hPns0XBOCs?si=Q7nUXsYtG0mFE2Un" class="btn" target="_blank">İzle</a>
+      </div>
+    </div>
 
-<!-- KURALLAR -->
-<div class="card">
-<h2>⚠️ Kurallar</h2>
-<ul>
-<li>Elektronik cihaz yasak</li>
-<li>Sadece kimlik + su</li>
-<li>Fotoğraf çekilir</li>
-<li>Mont çıkarılır</li>
-<li>Telefonlar sınav sonuna kadar alınır</li>
-</ul>
-</div>
+    <div class="note">
+      Duyurular dijital sınav sonrası yapılır.<br><br>
+      Bizde komisyonda 1 hoca olacaktır (Onur veya Esra hoca). İşleyiş benzer ancak 3. bölüm farklıdır.
+      3. bölüm için örnek sınava bakınız.
+    </div>
+  </div>
 
-<!-- SONUC -->
-<div class="card">
-<h2>📊 Sonuç Süreci</h2>
-<ul>
-<li>Telc (Almanya) değerlendirir</li>
-<li>Sınav merkezleri sonuçlara müdahale edemez</li>
-<li>Sonuçlar ~15 iş günü içinde açıklanır</li>
-<li>Sertifikalar mail ile gelir</li>
-</ul>
-</div>
+  <div class="card">
+    <h2>📄 Örnek Sınav</h2>
+    <div class="link-list">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">TELC A2 Örnek Sınav</div>
+          <div class="link-sub">Resmî örnek sınav dosyasını indirebilirsiniz.</div>
+        </div>
+        <a href="https://www.telc.net/fileadmin/user_upload/mock_exams/Deutsch/telc_deutsch_a2_01.zip" class="btn" target="_blank">İndir</a>
+      </div>
+    </div>
+  </div>
 
-<!-- UCRET -->
-<div class="card">
-<h2>💶 Ücret</h2>
-<p><strong>170€</strong></p>
-<div class="note">Sınav günü elden euro olarak verilmelidir</div>
-</div>
+  <div class="card">
+    <h2>📚 Hazırlık Dosyaları</h2>
+    <div class="link-list">
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Drive Klasörü</div>
+          <div class="link-sub">Hazırlık materyalleri ve ek dosyalar.</div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1GRjqxt_FvMmiRtguHsDjNlxPZQL1X82P" class="btn" target="_blank">Aç</a>
+      </div>
+    </div>
+  </div>
 
-<!-- CONTACT -->
-<div class="contact">
-<h2>📞 İletişim</h2>
-<p>0540 912 25 03<br>0537 243 51 23</p>
-<p>Onur Hoca'ya WhatsApp'tan yazabilirsiniz</p>
-</div>
+  <div class="card">
+    <h2>⚠️ Kurallar</h2>
+    <ul>
+      <li>Elektronik cihaz yasak</li>
+      <li>Sadece kimlik + su</li>
+      <li>Fotoğraf çekilir</li>
+      <li>Mont çıkarılır</li>
+      <li>Telefonlar sınav sonuna kadar alınır</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📊 Sonuç Süreci</h2>
+    <ul>
+      <li>Telc (Almanya) değerlendirir</li>
+      <li>Sınav merkezleri sonuçlara müdahale edemez</li>
+      <li>Sonuçlar yaklaşık 15 iş günü içinde açıklanır</li>
+      <li>Sertifikalar mail ile gelir</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💶 Ücret</h2>
+    <p><strong>170€</strong></p>
+    <div class="note">Sınav günü elden euro olarak verilmelidir.</div>
+  </div>
+
+  <div class="contact">
+    <h2>📞 İletişim</h2>
+    <p>0540 912 25 03<br>0537 243 51 23</p>
+    <p>Onur Hoca'ya WhatsApp'tan yazabilirsiniz.</p>
+  </div>
 
 </div>
 
 <a class="whatsapp" href="https://wa.me/905409122503" target="_blank">
-WhatsApp'tan Yaz
+  WhatsApp'tan Yaz
 </a>
 
 </body>
