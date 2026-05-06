@@ -139,6 +139,9 @@ a{
   font-size:14px;
   font-weight:800;
   transition:.2s ease;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
 }
 
 .hero-btn.primary{
@@ -244,6 +247,9 @@ a{
   box-shadow:0 8px 18px rgba(35,64,120,.16);
   transition:.2s ease;
   white-space:nowrap;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
 }
 
 .btn:hover{
@@ -363,6 +369,8 @@ ul li{
 
     <div class="hero-actions">
       <a href="form.pdf" class="hero-btn primary" download>Başvuru Formu İndir</a>
+      <a href="https://forms.gle/aPwHN7zHt4JrzrrY7" class="hero-btn primary" target="_blank" rel="noopener noreferrer">Online Başvuru Formunu Doldur</a>
+      <button class="hero-btn secondary" type="button" onclick="copyFormLink()">Başvuru Linkini Kopyala</button>
       <a href="https://wa.me/905409122503" class="hero-btn secondary" target="_blank">WhatsApp'tan Yaz</a>
     </div>
   </section>
@@ -370,10 +378,7 @@ ul li{
   <div class="card">
     <h2>📅 A2 Sınav Tarihleri</h2>
     <div class="chips">
-      <span>10 Nisan</span>
-      <span>14 Nisan</span>
-      <span>16 Nisan</span>
-      <span>21 Nisan</span>
+      
       <span>05 Mayıs</span>
       <span>12 Mayıs</span>
       <span>20 Mayıs</span>
@@ -381,6 +386,8 @@ ul li{
       <span>16 Haziran</span>
       <span>23 Haziran</span>
       <span>30 Haziran</span>
+      <span>14 Temmuz</span>
+      <span>21 Temmuz</span>
     </div>
   </div>
 
@@ -393,6 +400,15 @@ ul li{
           <div class="link-sub">Başvuru formunu indirip doldurabilirsiniz.</div>
         </div>
         <a href="form.pdf" class="btn" download>İndir</a>
+      </div>
+
+      <div class="link-item">
+        <div class="link-main">
+          <div class="link-title">Online Başvuru Formu</div>
+          <div class="link-sub">Başvurunuzu online olarak doldurmak için form bağlantısını açabilirsiniz.</div>
+        </div>
+        <a href="https://forms.gle/aPwHN7zHt4JrzrrY7" class="btn" target="_blank" rel="noopener noreferrer">Formu Doldur</a>
+        <button class="btn secondary" type="button" onclick="copyFormLink()">Linki Kopyala</button>
       </div>
     </div>
   </div>
@@ -518,6 +534,41 @@ ul li{
 <a class="whatsapp" href="https://wa.me/905409122503" target="_blank">
   WhatsApp'tan Yaz
 </a>
+
+<script>
+function copyFormLink(){
+  const link = "https://forms.gle/aPwHN7zHt4JrzrrY7";
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(link).then(function(){
+      alert("Online başvuru formu linki kopyalandı.");
+    }).catch(function(){
+      fallbackCopyText(link);
+    });
+  } else {
+    fallbackCopyText(link);
+  }
+}
+
+function fallbackCopyText(text){
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+
+  try {
+    document.execCommand("copy");
+    alert("Online başvuru formu linki kopyalandı.");
+  } catch (err) {
+    alert("Link kopyalanamadı. Link: " + text);
+  }
+
+  document.body.removeChild(textarea);
+}
+</script>
 
 </body>
 </html>
